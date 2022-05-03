@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ExamAWS.Models.JUGADORES>
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Create</h1>
+
+<h4>Jugador</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="control-label">IdJugador</label>
+                <input name="IdJugador" type="number" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <input name="Nombre" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Posicion</label>
+                <input name="Posicion" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Imagen</label>
+                <input name="Imagen" type="file" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Equipo</label>
+                <select name="IdEquipo">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.IdEquipo">@item.Nombre</option>
+                    }
+                </select>
+            
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home"asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ExamAWS.Models.APUESTAS>
+
+@{
+    ViewData["Title"] = "Apuestas";
+}
+
+<h1>Apuestas</h1>
+
+<p>
+    <a asp-controller="Equipos" asp-action="CreateApuesta" class="btn btn-success">Nueva Apuesta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                Real Madrid
+            </th>
+            <th>
+                Manchester City
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GolesEquipoLocal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GolesEquipoVisitante)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ExamAWS.Models.JUGADORES>
+
+@{
+    ViewData["Title"] = "Jugadores";
+}
+
+<h1>Jugadores</h1>
+
+<p>
+    <a asp-action="CreateJugador" class="btn btn-success">Nuevo Jugador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdJugador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdJugador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Posicion)
+                </td>
+                <td>
+                    <img src="" style="width:100px;height:200px" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
